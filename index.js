@@ -27,6 +27,7 @@ const inventory = [
  */
 function logNames(items) {
   // TODO: use `forEach`
+  inventory.forEach((items) => console.log(items.name));
 }
 
 /**
@@ -35,6 +36,7 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
+  return inventory.map((items) => items.name.toUpperCase());
 }
 
 /**
@@ -44,6 +46,7 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  return inventory.find((items) => items.id === id);
 }
 
 /**
@@ -53,6 +56,11 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  for (const item of items) {
+    if (item.name === name) {
+      return item.price;
+    }
+  }
 }
 
 /**
@@ -62,6 +70,8 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  const filter = inventory.filter((items) => items.category === category);
+  return filter;
 }
 
 /**
@@ -70,6 +80,8 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  const total = inventory.reduce((sum, items) => sum + items.quantity, 0);
+  return total;
 }
 
 /**
@@ -78,6 +90,8 @@ function countItems(items) {
  */
 function getTotalPrice(items) {
   // TODO: use `reduce`
+  const total = inventory.reduce((sum, items) => sum + items.price, 0);
+  return total;
 }
 
 // === READ BUT DO NOT CHANGE THE CODE BELOW ===
